@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const User = require("../models/message");
 
 const UserController = {
   create: async (req, res) => {
@@ -7,7 +7,7 @@ const UserController = {
       const userCriado = await User.create({ nome, email, cell, assunto, msg });
 
       return res.status(200).json({
-        msg: "Usuário criado com sucesso!",
+        msg: "Mensagem enviada com sucesso!",
         user: userCriado,
       });
     } catch (error) {

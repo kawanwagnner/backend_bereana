@@ -1,8 +1,11 @@
 const express = require("express");
 const router = require("./router/router");
+const { connectDatabase } = require("./config/config");
 const app = express();
 
-const User = require("./models/User");
+const PORT = process.env.PORT || 8080; // Define a porta 8080 ou usa uma porta definida nas variáveis de ambiente
+
+const User = require("./models/message");
 
 // Modelo da API JSON
 app.use(express.json());
