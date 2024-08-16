@@ -5,8 +5,10 @@ const router = Router();
 
 // Configurar as rotas (CRUD);
 
-router.post("/", (req, res) => {
-  UserController.create(req, res);
-});
+router.post("/", UserController.create);
+router.get("/", UserController.getAll);
+router.get("/:id", UserController.getById);
+router.put("/:id", UserController.update);
+router.delete("/:id", UserController.delete);
 
 module.exports = router;
