@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const router = require("./router/router");
 const { connectDatabase } = require("./config/config");
 const app = express();
@@ -6,6 +7,13 @@ const app = express();
 const PORT = process.env.PORT || 8080; // Define a porta 8080 ou usa uma porta definida nas variáveis de ambiente
 
 const User = require("./models/message");
+
+// Configurar CORS
+app.use(
+  cors({
+    origin: "*", // ou "*" para permitir todas as origens
+  })
+);
 
 // Modelo da API JSON
 app.use(express.json());
